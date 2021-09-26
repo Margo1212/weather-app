@@ -8,7 +8,7 @@ body {
 }
 
 main {
-    background-image: url('/rain-min.png');
+    background-image: url('rain-min.png');
     background-repeat:no-repeat;
     background-size:cover;
     background-position:center;
@@ -44,7 +44,7 @@ main {
     font-size: 60px;
 }
 .search h1::after{
-    content: url(/Line1.png);
+    content: url(Line1.png);
     display: block;
 }
 
