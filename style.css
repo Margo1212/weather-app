@@ -8,7 +8,7 @@ body {
 }
 
 main {
-    background-image: url('rain-min.png');
+    background-image: url('images/rain-min.png');
     background-repeat:no-repeat;
     background-size:cover;
     background-position:center;
@@ -22,9 +22,8 @@ main {
     justify-content: center;
     align-items: center;
     font-family: 'Roboto', sans-serif;
-    background-color: rgba(0, 0, 0, 0.363);
-    
-    font-size: 120%;
+    background-color: rgba(0, 0, 0, 0.459);
+    position: relative;   
 }
 
 .logo {
@@ -35,16 +34,50 @@ main {
 
 .search {
     color: #fff;
+    text-align: center;
 }
-
-
 
 .search h1 {
     font-weight: 700;
     font-size: 60px;
-}
-.search h1::after{
-    content: url(Line1.png);
-    display: block;
+    margin: 0;
 }
 
+.search h1::after{
+    content: url(/images/Line1.png);
+    display: block;
+    margin: 20px 0 20px 0;
+}
+
+.search-bar {
+    width: 35rem;
+    margin: 25px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 29%);
+    border: none;
+    border-radius: 9px;
+    outline: none; 
+    color: #fff;
+    font-size: 24px;   
+}
+
+.search-bar::placeholder {
+    letter-spacing: 1px;    
+}
+
+.search-icon {
+    position: relative;
+    bottom: -0.5rem;
+    left: -6rem;
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+}
+
+.information {
+    position: absolute;
+    right: 0;
+    width: 20%;
+    height: 100vh;
+    background-color: #fff;
+    border-radius: 10px;
+}
