@@ -64,13 +64,13 @@ main {
     letter-spacing: 1px;    
 }
 
-.search-icon {
+/*.search-icon {
     position: relative;
     bottom: -0.5rem;
     left: -6rem;
     background-color: rgba(255, 255, 255, 0);
-    border: none;
-}
+    cursor: pointer;
+}*/
 
 .weather-container {
     position: absolute;
@@ -93,14 +93,115 @@ main {
     font-size: 15px;
     font-weight: 500;
     text-align: center;
-    letter-spacing: -0.5%;  
-      
+    letter-spacing: -0.5%;        
 }
+
 .city::before {
     content: url(./images/location.png);
     position: absolute;
     left: 7rem;
 }
+
+.today {
+    font-size: 45px;
+    margin: 15px;
+    font-weight: 500;
+}
+
+.today-info {
+    display: flex;
+    width: 24.75rem;
+    height: 16rem;
+    margin: auto;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.info-left {
+width: 60%;
+}
+
+.temperature {
+    font-size: 55px;
+    margin: 0;
+}
+
+.description {
+    font-weight: 300;
+    font-size: 29px;
+    text-transform: capitalize;
+}
+
+.data {
+    font-weight: 400;
+    font-size: 14px;
+    color: rgba(98, 105, 109, 1);
+    margin: 30px 0;
+}
+
+.info-right {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    align-items: ;
+    color: #62696D;
+    font-weight: 400;
+    letter-spacing: -0.005em;
+    font-size: 14px;
+    line-height: 40px;
+    padding: 5px;
+    width: 40%;
+}
+
+.info-right::before {
+    content: url(./images/vertical-line.png);
+    position: absolute;
+    left: -6px;
+    top: 3%;
+}
+
+.flex {
+    display: flex;
+}
+
+.daily-section {
+    display: flex;
+    margin: 10px;
+}
+
+.second {
+    width: 129px;
+    height: 124px;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    margin: 10px;
+}
+
+.third {
+    width: 129px;
+    height: 124px;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    margin: 10px;
+}
+
+.fourth {
+    width: 129px;
+    height: 124px;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    margin: 10px;
+}
+
+
+
+
 
 
 

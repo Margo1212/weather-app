@@ -10,22 +10,33 @@ let weather = {
     },
     displayWeather: function(data) {
         const { name } = data;
-        const { icon, description } = data.weather[0];
+        const { country } = data.sys;
+        const { description } = data.weather[0];
         const { temp, humidity } = data.main;
         const { feels_like } = data.main;
         const { speed } = data.wind;
         const { all } = data.clouds;
         const { visibility } = data;
         
-        console.log(name, description, temp, humidity, speed, all)
-        document.querySelector('.city').innerText = 'Current location: ' + name;
-        document.querySelector('.temperature').innerText = temp + '°C';
+
+        
+        console.log(name, country, description, temp, humidity, speed, all)
+        document.querySelector('.city').innerText = 'Current location: ' + name + ', ' + country;
+        document.querySelector('.temperature').innerText = Math.ceil(temp) + '°C';
         document.querySelector('.description').innerText = description;
-        document.querySelector('.icon').src = 'https://openweathermap.org/img/wn/' + icon + '@2x.png';
-        document.querySelector('.real').innerText = 'RealFeel: ' + feels_like + '°C';
+        
+        document.querySelector('.real').innerText = 'RealFeel: ' + Math.ceil(feels_like) + '°C';
         document.querySelector('.humidity').innerText = 'Humidity: ' + humidity;
-        document.querySelector('.wind').innerText = speed;
+        document.querySelector('.wind').innerText = "Wind speed: " + speed + 'km/h';
         document.querySelector('.cloudcover').innerText = 'Cloudcover: ' + all + '%';
         document.querySelector('.visibility').innerText = 'Visibility: ' + visibility;
+    },
+
+    search: function(){
+        this.fetchWeather(document.querySelector('.search-bar').value)
     }
-}
+};
+
+document.querySelector('button').addEventListener('click', function() {
+weather.search()
+})
