@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="css/style.css">
-    <script src="js/script.js" defer></script>
+    <script type="module" src="js/script.js" defer></script>
 </head>
 <body>
     <main class="main">
@@ -18,13 +18,15 @@
             <div class="search">
                 <h1>The best weather forecast</h1>
                 <div class="seach-box">
-                    <input type="text" class="search-bar" placeholder="Enter location">
-                    <button class="search-icon">
-                        <img  src="images/bi_search.png" alt="search icon">
-                    </button>
+                    <div class="error"></div>
+                    <div class="search-wrapper"><input type="text" class="search-bar" placeholder="Enter location" required>
+                        <button class="search-icon">
+                            <img  src="images/bi_search.png" alt="search icon">
+                        </button></div>
+                    
                 </div>               
             </div>
-            <div class="weather-container">
+            <div class="weather-container closed-weather-container">
                 <h3 class="city">current location: New York, USA</h3>
                 <h3 class="today">Today</h3>
                 <div class="today-info">                
@@ -42,21 +44,7 @@
                         <div class="visibility">Visibility: 50%</div>
                     </div>
                 </div>
-                <h3 class="daily">Daily</h3>
-                <div class="daily-section">                    
-                    <div class="second">
-                        <p class="temp">15°C</p>
-                        <p class="desc">Rain</p>
-                    </div>
-                    <div class="third">
-                        <p class="temp">15°C</p>
-                        <p class="desc">Rain</p>
-                    </div>
-                    <div class="fourth">
-                        <p class="temp">15°C</p>
-                        <p class="desc">Rain</p>
-                    </div>
-                </div>
+                
             </div>
         </div>      
     </main>

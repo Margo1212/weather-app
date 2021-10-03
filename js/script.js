@@ -6,11 +6,13 @@ let weather = {
         + '&units=metric&appid=' 
         + this.apiKey)
         .then((response) => response.json())
-        .then((data) => this.displayWeather(data));
+        .then((data) => this.displayWeather(data))
+        .catch(error => alert('Please enter correct location'))
+        
     },
+    
     displayWeather: function(data) {
         const { name } = data;
-        const { country } = data.sys;
         const { description } = data.weather[0];
         const { temp, humidity } = data.main;
         const { feels_like } = data.main;
@@ -20,8 +22,8 @@ let weather = {
         
 
         
-        console.log(name, country, description, temp, humidity, speed, all)
-        document.querySelector('.city').innerText = 'Current location: ' + name + ', ' + country;
+        console.log(name, description, temp, humidity, speed, all)
+        document.querySelector('.city').innerText = 'Current location: ' + name + ', ';
         document.querySelector('.temperature').innerText = Math.ceil(temp) + '°C';
         document.querySelector('.description').innerText = description;
         
@@ -37,6 +39,15 @@ let weather = {
     }
 };
 
-document.querySelector('button').addEventListener('click', function() {
-weather.search()
+const button = document.querySelector('button')
+const weatherContainer = document.querySelector('.weather-container');
+const searchBox = document.querySelector('.search')
+
+
+
+button.addEventListener('click', function() {
+    weather.search()
+    weatherContainer.classList.add('container-open')
+    searchBox.classList.add('search-open')
 })
+
