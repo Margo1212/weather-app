@@ -1,47 +1,63 @@
 * {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
+
 * body {
   margin: 0;
   padding: 0;
 }
+
 * body main {
   background-image: url("../images/rain-min.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 }
+
 * body main .container {
   height: 100vh;
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: "Roboto", sans-serif;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: 'Roboto', sans-serif;
 }
+
 * body main .container .logo {
   position: absolute;
   top: 10px;
   left: 10px;
 }
+
 * body main .container .search {
   color: #fff;
   text-align: center;
   text-shadow: 2px 2px 2px #2e2d2d;
 }
+
 * body main .container .search h1 {
   font-weight: 700;
   font-size: 60px;
   margin: 0;
 }
+
 * body main .container .search h1::after {
   content: url(../images/Line1.png);
   display: block;
   margin: 20px 0 20px 0;
 }
+
 * body main .container .search .search-wrapper {
   position: relative;
 }
+
 * body main .container .search .search-wrapper .search-bar {
   width: 30rem;
   margin: 25px;
@@ -53,10 +69,27 @@
   color: white;
   font-size: 24px;
 }
+
+* body main .container .search .search-wrapper .search-bar::-webkit-input-placeholder {
+  letter-spacing: 1px;
+  opacity: 1;
+}
+
+* body main .container .search .search-wrapper .search-bar:-ms-input-placeholder {
+  letter-spacing: 1px;
+  opacity: 1;
+}
+
+* body main .container .search .search-wrapper .search-bar::-ms-input-placeholder {
+  letter-spacing: 1px;
+  opacity: 1;
+}
+
 * body main .container .search .search-wrapper .search-bar::placeholder {
   letter-spacing: 1px;
   opacity: 1;
 }
+
 * body main .container .search .search-wrapper .search-icon {
   position: absolute;
   top: 1.7rem;
@@ -67,21 +100,27 @@
   border-radius: 50%;
   cursor: pointer;
 }
+
 * body main .container .search-open {
   position: absolute;
   left: 12rem;
+  -webkit-transition: right 2s;
   transition: right 2s;
 }
+
 * body main .container .search-open .search-icon {
   background-color: transparent;
   border: none;
   cursor: pointer;
 }
+
 * body main .container .weather-container {
   position: fixed;
   right: -436px;
+  -webkit-transition: right 2s cubic-bezier(0.075, 0.82, 0.165, 1);
   transition: right 2s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
+
 * body main .container .container-open {
   display: block;
   position: fixed;
@@ -91,13 +130,15 @@
   background-color: rgba(255, 255, 255, 0.75);
   border-radius: 10px;
 }
+
 * body main .container .container-open .city {
   width: 20rem;
   height: 3rem;
   margin: 1.5rem auto;
   padding: 1rem;
   background: #FFFFFF;
-  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
   color: #757c80;
   font-size: 15px;
@@ -105,49 +146,67 @@
   text-align: center;
   letter-spacing: -0.5%;
 }
+
 * body main .container .container-open .city::before {
   content: url(../images/location.png);
   position: absolute;
   left: 5rem;
 }
+
 * body main .container .container-open .today {
   font-size: 40px;
   margin: 15px;
   font-weight: 500;
 }
+
 * body main .container .container-open .today-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   width: 25.4rem;
   height: 15rem;
   margin: 15px;
   background: #FFFFFF;
-  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
   padding: 10px;
 }
+
 * body main .container .container-open .today-info .info-left {
   width: 60%;
 }
+
 * body main .container .container-open .today-info .info-left .temperature {
   font-size: 50px;
   margin: 0;
 }
+
 * body main .container .container-open .today-info .info-left .description {
   font-weight: 300;
   font-size: 25px;
   text-transform: capitalize;
 }
+
 * body main .container .container-open .today-info .info-left .data {
   font-weight: 400;
   font-size: 14px;
   color: #62696d;
   margin: 30px 0;
 }
+
 * body main .container .container-open .today-info .info-right {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   position: relative;
-  flex-direction: column;
-  justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   color: #62696D;
   font-weight: 400;
   letter-spacing: -0.005em;
@@ -156,22 +215,28 @@
   padding: 5px;
   width: 40%;
 }
+
 * body main .container .container-open .today-info .info-right::before {
   content: url(../images/vertical-line.png);
   position: absolute;
   left: -8px;
   top: -2px;
 }
+
 * body main .container .container-open .daily {
   font-size: 35px;
   margin: 15px;
   font-weight: 500;
 }
+
 * body main .container .container-open .daily-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   margin: 10px;
   position: relative;
 }
+
 * body main .container .container-open .daily-info .daily-box {
   width: 129px;
   height: 124px;
@@ -179,25 +244,29 @@
   margin: 5px;
   padding: 5px;
   border-radius: 10px;
-  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
 }
+
 * body main .container .container-open .daily-info .daily-box .temp {
   font-weight: 500;
   font-size: 30px;
   margin: 5px 0;
 }
+
 * body main .container .container-open .daily-info .daily-box .desc {
   font-weight: 400;
   text-transform: capitalize;
   font-size: 10px;
   margin: 0 2px 0 2px;
   /*&::after {
-      content: url('/images/sunny.png');
-      margin: 0;                                 position: absolute;
-      top: 2.6rem;
-      margin: 2px 0 0 5px;
-  }*/
+                                    content: url('/images/sunny.png');
+                                    margin: 0;                                 position: absolute;
+                                    top: 2.6rem;
+                                    margin: 2px 0 0 5px;
+                                }*/
 }
+
 * body main .container .container-open .daily-info .daily-box .date {
   font-weight: 300;
   font-size: 10px;
@@ -205,5 +274,4 @@
   margin: 10px 1px 2px 1px;
   padding: 10px 0;
 }
-
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=main.css.map */
