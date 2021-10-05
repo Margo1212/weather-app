@@ -1,30 +1,36 @@
 let weather = {
     'apiKey': '787ac809f4b69e1af64183f6d205a32e',
     fetchWeather: function(city) {
-        fetch('http://api.openweathermap.org/data/2.5/weather?q=' 
+        fetch('http://api.openweathermap.org/data/2.5/forecast?q=' 
         + city 
         + '&units=metric&appid=' 
         + this.apiKey)
         .then((response) => response.json())
         .then((data) => this.displayWeather(data))
-        .catch(error => alert('Please enter correct location'))
+        //.catch(error => alert('Please enter correct location'))
         
     },
     
     displayWeather: function(data) {
-        const { name } = data;
-        const { description } = data.weather[0];
-        const { temp, humidity } = data.main;
-        const { feels_like } = data.main;
-        const { speed } = data.wind;
-        const { all } = data.clouds;
-        const { visibility } = data;
+        const list = data.list[0]    
+        const { name } = data.city;
+
+        //today
+        const { description } = list.weather[0];
+        const { temp, humidity, feels_like } = list.main;
+        const { speed } = list.wind;
+        const { all } = list.clouds;
+        const { visibility } = list;
+
+        //daily
         
 
-        
-        console.log(name, description, temp, humidity, speed, all)
+
+
+
+        console.log(name, description, temp, humidity, feels_like, speed, all, visibility )
         document.querySelector('.city').innerText = 'Current location: ' + name + ', ';
-        document.querySelector('.temperature').innerText = Math.ceil(temp) + '°C';
+        document.querySelector('.temperature').innerText = Math.round(temp) + '°C';
         document.querySelector('.description').innerText = description;
         
         document.querySelector('.real').innerText = 'RealFeel: ' + Math.ceil(feels_like) + '°C';

@@ -92,10 +92,10 @@
   border-radius: 10px;
 }
 * body main .container .container-open .city {
-  width: 21rem;
-  height: 3.75rem;
-  margin: 2.313rem auto;
-  padding: 1.4rem;
+  width: 20rem;
+  height: 3rem;
+  margin: 1.5rem auto;
+  padding: 1rem;
   background: #FFFFFF;
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
@@ -111,15 +111,15 @@
   left: 5rem;
 }
 * body main .container .container-open .today {
-  font-size: 45px;
+  font-size: 40px;
   margin: 15px;
   font-weight: 500;
 }
 * body main .container .container-open .today-info {
   display: flex;
-  width: 24.75rem;
-  height: 16rem;
-  margin: auto;
+  width: 25.4rem;
+  height: 15rem;
+  margin: 15px;
   background: #FFFFFF;
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
@@ -129,12 +129,12 @@
   width: 60%;
 }
 * body main .container .container-open .today-info .info-left .temperature {
-  font-size: 55px;
+  font-size: 50px;
   margin: 0;
 }
 * body main .container .container-open .today-info .info-left .description {
   font-weight: 300;
-  font-size: 29px;
+  font-size: 25px;
   text-transform: capitalize;
 }
 * body main .container .container-open .today-info .info-left .data {
@@ -159,8 +159,25 @@
 * body main .container .container-open .today-info .info-right::before {
   content: url(../images/vertical-line.png);
   position: absolute;
-  left: -6px;
-  top: 3%;
+  left: -8px;
+  top: -2px;
+}
+* body main .container .container-open .daily {
+  font-size: 30px;
+  margin: 15px;
+  font-weight: 500;
+}
+* body main .container .container-open .daily-info {
+  display: flex;
+  margin: 10px;
+}
+* body main .container .container-open .daily-info .daily-box {
+  width: 129px;
+  height: 124px;
+  background-color: #fff;
+  margin: 5px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
 }
 
 /*# sourceMappingURL=style.css.map */
