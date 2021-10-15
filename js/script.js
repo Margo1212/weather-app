@@ -77,11 +77,17 @@ let weather = {
 const button = document.querySelector('button');
 const weatherContainer = document.querySelector('.weather-container');
 const searchBox = document.querySelector('.search')
+const close = document.querySelector('.close')
 
-button.addEventListener('click', function() {
+button.addEventListener('click', () => {
         weatherContainer.classList.add('container-open')
         weather.search()
         searchBox.classList.add('search-open')   
+})
+
+close.addEventListener('click', () => {
+    weatherContainer.classList.remove('container-open')
+    searchBox.classList.remove('search-open')
 })
 
 //date 

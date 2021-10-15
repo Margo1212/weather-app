@@ -24,6 +24,11 @@
   top: 10px;
   left: 10px;
 }
+@media screen and (max-width: 480px) {
+  * body main .container .logo {
+    width: 150px;
+  }
+}
 * body main .container .search {
   color: #fff;
   text-align: center;
@@ -38,6 +43,13 @@
   content: url(../images/Line1.png);
   display: block;
   margin: 20px 0 20px 0;
+}
+@media screen and (max-width: 480px) {
+  * body main .container .search h1 {
+    margin: 15rem 0 0 0;
+    font-size: 40px;
+    padding: 30px;
+  }
 }
 * body main .container .search .search-wrapper {
   position: relative;
@@ -57,6 +69,14 @@
   letter-spacing: 1px;
   opacity: 1;
 }
+@media screen and (max-width: 480px) {
+  * body main .container .search .search-wrapper .search-bar {
+    width: 20rem;
+    margin: 15px;
+    padding: 13px;
+    font-size: 20px;
+  }
+}
 * body main .container .search .search-wrapper .search-icon {
   position: absolute;
   top: 1.7rem;
@@ -67,6 +87,15 @@
   border-radius: 50%;
   cursor: pointer;
 }
+@media screen and (max-width: 480px) {
+  * body main .container .search .search-wrapper .search-icon {
+    width: 50px;
+    height: 50px;
+    padding: 5px;
+    top: 0.9rem;
+    right: 18px;
+  }
+}
 * body main .container .search-open {
   position: absolute;
   left: 12rem;
@@ -76,6 +105,12 @@
   background-color: transparent;
   border: none;
   cursor: pointer;
+}
+@media screen and (max-width: 480px) {
+  * body main .container .search-open {
+    position: absolute;
+    left: 0;
+  }
 }
 * body main .container .weather-container {
   position: fixed;
@@ -109,6 +144,41 @@
   content: url(../images/location.png);
   position: absolute;
   left: 5rem;
+}
+@media screen and (max-width: 480px) {
+  * body main .container .container-open .city {
+    margin: 10px 0 0 15px;
+  }
+  * body main .container .container-open .city::before {
+    content: url(../images/location.png);
+    position: absolute;
+    left: 2rem;
+  }
+}
+* body main .container .container-open .close {
+  position: absolute;
+  right: 15px;
+  top: 22px;
+  width: 36px;
+  height: 36px;
+  opacity: 0.3;
+}
+* body main .container .container-open .close:hover {
+  opacity: 1;
+}
+* body main .container .container-open .close:before, * body main .container .container-open .close:after {
+  position: absolute;
+  left: 15px;
+  content: " ";
+  height: 33px;
+  width: 2px;
+  background-color: #333;
+}
+* body main .container .container-open .close:before {
+  transform: rotate(45deg);
+}
+* body main .container .container-open .close:after {
+  transform: rotate(-45deg);
 }
 * body main .container .container-open .today {
   font-size: 40px;
@@ -213,6 +283,16 @@
   color: #62696d;
   margin: 10px 1px 2px 1px;
   padding: 10px 0;
+}
+@media screen and (max-width: 480px) {
+  * body main .container .container-open {
+    width: 471px;
+  }
+}
+@media screen and (max-width: 480px) {
+  * body main .container {
+    align-items: flex-start;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
