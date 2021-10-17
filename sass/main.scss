@@ -1,17 +1,18 @@
+$darkGrey: rgba(48, 47, 47, 0.815);
+$mainColor: rgb(255, 255, 255);
+
 * {
     box-sizing: border-box;
-
+  
     body {
         margin: 0;
         padding: 0;
 
         main {
-            background-image: url('../images/rain-min.jpg');
+            background-image: url('../images/weather.jpg');
             background-repeat:no-repeat;
             background-size:cover;
             background-position:center;
-
-            
 
             .container {
                 height: 100vh;
@@ -20,17 +21,11 @@
                 justify-content: center;
                 align-items: center;
                 font-family: 'Roboto', sans-serif;
-
-               
-                
-                
                 
                 .logo {
                     position: absolute;
                     top: 10px;
-                    left: 10px;
-
-                   
+                    left: 10px;               
                 }
 
                 @media screen and (max-width: 480px) {
@@ -40,9 +35,9 @@
                 }
 
                 .search {
-                    color: #fff;
+                    color: $mainColor;
                     text-align: center;
-                    text-shadow: 2px 2px 2px #2e2d2d;                    
+                    text-shadow: 2px 2px 2px #020202;                    
 
                     h1 {
                         font-weight: 700;
@@ -52,32 +47,31 @@
                         &::after{
                             content: url(../images/Line1.png);
                             display: block;
-                            margin: 20px 0 20px 0;
-                        
+                            margin: 20px 0 20px 0;                        
                         }
                     }
 
                     @media screen and (max-width: 480px) {
                         h1 {
-                          margin: 15rem 0 0 0;
                           font-size: 40px;
                           padding: 30px;
                         }
                     }
 
                     .search-wrapper {
-                        position: relative;                                                                   
-
-
+                        width: 100%;
+                        display: flex;
+                        justify-content:center;   
+                                                                          
                         .search-bar {
                             width: 30rem;
-                            margin: 25px;
+                            margin: 0;
                             padding: 20px;
-                            background-color: rgba(48, 47, 47, 0.815);
+                            background-color: $darkGrey;
                             border: none;
-                            border-radius: 9px;
+                            border-radius: 50px;
                             outline: none; 
-                            color: rgb(255, 255, 255);
+                            color: $mainColor;
                             font-size: 24px;
                             
                             &::placeholder {
@@ -88,41 +82,37 @@
 
                         @media screen and (max-width: 480px) {
                             .search-bar {
-                              
-                              
-                              
-                              width: 20rem;
-                              margin: 15px;
-                              padding: 13px;
-                              font-size: 20px;
+                                width: 15rem;
+                                padding: 13px;
+                                font-size: 20px;
                             }
                         }
     
                         .search-icon {
-                            position: absolute;
-                            top: 1.7rem;
                             width: 70px;
                             height: 70px;
-                            background-color: rgba(48, 47, 47, 0.815);
+                            background-color: $darkGrey;
                             border: none;
                             border-radius: 50%;
                             cursor: pointer;
+                            padding: 0;
+                            margin: 0 0 0 10px;
                         }
 
                         @media screen and (max-width: 480px) {
                             .search-icon {
-                              width: 50px;
-                              height: 50px;
-                              padding: 5px;
-                              top: 0.9rem;
-                              right: 18px;                             
+                                width: 50px;
+                                height: 50px;
+                                padding: 5px;                             
                             }
-                        }
+                        }                        
+                    }                    
+                }
 
-                        
+                @media screen and (max-width: 480px) {
+                    .search { 
+                        align-self: center;                            
                     }
-    
-                    
                 }
 
                 .search-open {
@@ -130,7 +120,6 @@
                     left: 12rem;
                     transition: right 2s;
                     
-
                     .search-icon {
                         background-color: transparent;
                         border: none;
@@ -141,114 +130,106 @@
                 @media screen and (max-width: 480px) {
                     .search-open {
                         position: absolute;
-                        left: 0;
-                        
+                        left: 0;                        
                     }
                 }
 
-                    
-
                 .weather-container {
-                    position: fixed;
-                    right: -436px;
-                    transition: right 2s cubic-bezier(0.075, 0.82, 0.165, 1);
-                }
-
-                
-
-               
-
-                .container-open {
                     display: block;
                     position: fixed;
+                    top: 0;
                     right: 0;
-                    width: 436px;
-                    height: 100vh;
+                    width: 450px;
+                    height: 100%;
                     background-color: rgba(255, 255, 255, 0.726);
                     border-radius: 10px;
-                    
-                    
-
+                    transform: translateX(450px);
+                    transition: transform 0.7s ease-in-out;
+    
                     .city { 
                         width: 20rem;
                         height: 3rem;
                         margin: 1.5rem auto;
-                        padding: 1rem;
-                        background: #ffffff;
+                        padding: 15px 10px;
+                        background: $mainColor;
                         box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
                         border-radius: 10px;
                         color: rgba(117, 124, 128, 1);
                         font-size: 15px;
                         font-weight: 500;
-                        text-align: center;
                         letter-spacing: -0.5%;
+                        display: flex;
                         
                         &::before {
                             content: url(../images/location.png);
-                            position: absolute;
-                            left: 5rem;
+                            margin: 0 10px;
                         }
                     }
 
                     @media screen and (max-width: 480px) {
                         .city{
-                        margin: 10px 0 0 15px;
-
-                        &::before {
-                            content: url(../images/location.png);
-                            position: absolute;
-                            left: 2rem;
-                        }
+                            width: 17rem;
+                            margin: 10px 0 0 20px;
                         }
                     }
 
                     .close {
+                        display: none;
                         position: absolute;
-                        right: 15px;
-                        top: 22px;
+                        right: 20px;
+                        top: 18px;
                         width: 36px;
                         height: 36px;
                         opacity: 0.3;
-                      }
-                      .close:hover {
-                        opacity: 1;
-                      }
-                      .close:before, .close:after {
-                        position: absolute;
-                        left: 15px;
-                        content: ' ';
-                        height: 33px;
-                        width: 2px;
-                        background-color: #333;
-                      }
-                      .close:before {
-                        transform: rotate(45deg);
-                      }
-                      .close:after {
-                        transform: rotate(-45deg);
-                      }
-                      
 
+                        &:hover {
+                            opacity: 1;
+                        }
+
+                        &::before, &::after {
+                            position: absolute;
+                            left: 15px;
+                            content: ' ';
+                            height: 33px;
+                            width: 2px;
+                            background-color: $darkGrey;
+                        }
+
+                        &::before {
+                            transform: rotate(45deg);
+                        }
+
+                        &::after {
+                            transform: rotate(-45deg);
+                        }
+                    }
+
+                    @media screen and (max-width: 480px) {
+                        .close{
+                            display: block;
+                        }
+                    }
+               
                     .today {
                         font-size: 40px;
-                        margin: 15px;
+                        margin: 20px;
                         font-weight: 500;
                     }
 
                     .today-info {
                         display: flex;
                         width: 25.4rem;
-                        height: 15rem;
-                        margin: 15px;
-                        background: #ffffff;
-                        box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
+                        height: 15.5rem;
+                        margin: 20px;
+                        background: $mainColor;
+                        box-shadow: 0px 0px 5px $darkGrey;
                         border-radius: 10px;
-                        padding: 10px;
+                        padding: 10px;                       
 
                         .info-left {
-                            width: 60%;
-
-                            .temperature {
+                            
+                           
+                           .temperature {
                                 font-size: 50px;
                                 margin: 0;
                             }
@@ -262,7 +243,7 @@
                             .data {
                                 font-weight: 400;
                                 font-size: 14px;
-                                color: rgba(98, 105, 109, 1);
+                                color: $darkGrey;
                                 margin: 30px 0;
                             }
                         }
@@ -271,44 +252,70 @@
                             display: flex;
                             position: relative;
                             flex-direction: column;
-                            justify-content: center;
-                            color: #62696D;
+                            color: $darkGrey;
                             font-weight: 400;
                             letter-spacing: -0.005em;
                             font-size: 14px;
                             line-height: 40px;
                             padding: 5px;
                             width: 40%;
-
+                            margin: 10px 0 0 40px;     
+                            
                             &::before {
-                                content: url(../images/vertical-line.png);
+                                content: url('../images/vertical-line.png');
                                 position: absolute;
-                                left: -8px;
-                                top: -2px;
+                                top: -8px;
+                                left: -5px;
                             }
+                        }
+
+                        @media screen and (max-width: 480px) {
+                            .info-right {
+                                width: 13rem;
+                                margin: 0 auto;
+                                height: 20rem;
+
+                                &::before {
+                                    content: url('../images/vertical-line.png');
+                                    position: absolute;
+                                    top: 4px;
+                                }
+                            }
+                        }
+                    }
+
+                    @media screen and (max-width: 480px) {
+                        .today-info {
+                            width: 20rem;
+                            margin: 0 auto;
+                            height: 16rem;                           
                         }
                     }
 
                     .daily {
                         font-size: 35px;
-                        margin: 15px;
+                        margin: 20px;
                         font-weight: 500;
                     }
 
                     .daily-info {
                         display: flex;
-                        margin: 10px;
+                        margin: 20px;
                         position: relative;
 
                         .daily-box {
-                            width: 129px;
-                            height: 124px;
-                            background-color: #ffffff;
-                            margin: 5px;
+                            width: 140px;
+                            height: 130px;
+                            background-color: $mainColor;
+                            margin: 0 8px 0 0;
                             padding: 5px;
                             border-radius: 10px;
                             box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
-                            
+                            position: relative;
+
+                            &:last-of-type {
+                                margin: 0;
+                            }
 
                             .temp {
                                 font-weight: 500;
@@ -323,22 +330,17 @@
                                 margin: 0 2px 0 2px;
                             }
 
-                            .icon-weather1 {
+                            .icon-weather {
                                 position: absolute;
-                                top: 2.3rem;
-                                left: 5.5rem;
+                                top: 2rem;
+                                right: 0.1rem;
                             }
 
-                            .icon-weather2 {
-                                position: absolute;
-                                top: 2.3rem;
-                                left: 14.2rem;
-                            }
-
-                            .icon-weather3 {
-                                position: absolute;
-                                top: 2.3rem;
-                                left: 22.8rem;
+                            @media screen and (max-width: 480px) {
+                                .icon-weather {
+                                  width: 25px;
+                                  top: 2.8rem;
+                                }
                             }
 
                             .date {
@@ -349,32 +351,51 @@
                                 padding: 10px 0;
                             }
                         }
-                    }
-
-                    
+                    }                   
                 }
 
                 @media screen and (max-width: 480px) {
-                    .container-open{
-                    width: 471px;
+                    .weather-container{
+                        width: 375px;
+                        height: 100%;
+                        transform: translateX(375px);
+                        transition: transform 0.7s ease-in-out;
                     }
                 }
 
-
-                
-            }
-
-            @media screen and (max-width: 480px) {
-                .container{
-                align-items: flex-start;
+                .container-open {
+                    transform: translateX(0px);
+                    transition: transform 0.7s ease-in-out;
                 }
-            }
 
-            
+                @media screen and (max-width: 480px) {
+                    .container-open {
+                        width: 375px;
+                        transform: translateX(0px);
+                        transition: transform 0.7s ease-in-out;                        
+                    }
+                }
+
+                .container-closed {
+                    transform: translateX(450px);
+                    transition: transform 0.7s ease-in-out;
+                }
+
+                @media screen and (max-width: 480px) {
+                    .container-closed {
+                        transform: translateX(375px);
+                        transition: transform 0.7s ease-in-out;
+                    }
+                }             
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            main {
+              background-position: left;             
+            }
         }
     }
 }
-
-
 
 

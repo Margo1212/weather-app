@@ -6,7 +6,7 @@
   padding: 0;
 }
 * body main {
-  background-image: url("../images/rain-min.jpg");
+  background-image: url("../images/weather.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -30,9 +30,9 @@
   }
 }
 * body main .container .search {
-  color: #fff;
+  color: white;
   text-align: center;
-  text-shadow: 2px 2px 2px #2e2d2d;
+  text-shadow: 2px 2px 2px #020202;
 }
 * body main .container .search h1 {
   font-weight: 700;
@@ -46,21 +46,22 @@
 }
 @media screen and (max-width: 480px) {
   * body main .container .search h1 {
-    margin: 15rem 0 0 0;
     font-size: 40px;
     padding: 30px;
   }
 }
 * body main .container .search .search-wrapper {
-  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 * body main .container .search .search-wrapper .search-bar {
   width: 30rem;
-  margin: 25px;
+  margin: 0;
   padding: 20px;
   background-color: rgba(48, 47, 47, 0.815);
   border: none;
-  border-radius: 9px;
+  border-radius: 50px;
   outline: none;
   color: white;
   font-size: 24px;
@@ -71,29 +72,31 @@
 }
 @media screen and (max-width: 480px) {
   * body main .container .search .search-wrapper .search-bar {
-    width: 20rem;
-    margin: 15px;
+    width: 15rem;
     padding: 13px;
     font-size: 20px;
   }
 }
 * body main .container .search .search-wrapper .search-icon {
-  position: absolute;
-  top: 1.7rem;
   width: 70px;
   height: 70px;
   background-color: rgba(48, 47, 47, 0.815);
   border: none;
   border-radius: 50%;
   cursor: pointer;
+  padding: 0;
+  margin: 0 0 0 10px;
 }
 @media screen and (max-width: 480px) {
   * body main .container .search .search-wrapper .search-icon {
     width: 50px;
     height: 50px;
     padding: 5px;
-    top: 0.9rem;
-    right: 18px;
+  }
+}
+@media screen and (max-width: 480px) {
+  * body main .container .search {
+    align-self: center;
   }
 }
 * body main .container .search-open {
@@ -113,171 +116,186 @@
   }
 }
 * body main .container .weather-container {
-  position: fixed;
-  right: -436px;
-  transition: right 2s cubic-bezier(0.075, 0.82, 0.165, 1);
-}
-* body main .container .container-open {
   display: block;
   position: fixed;
+  top: 0;
   right: 0;
-  width: 436px;
-  height: 100vh;
+  width: 450px;
+  height: 100%;
   background-color: rgba(255, 255, 255, 0.726);
   border-radius: 10px;
+  transform: translateX(450px);
+  transition: transform 0.7s ease-in-out;
 }
-* body main .container .container-open .city {
+* body main .container .weather-container .city {
   width: 20rem;
   height: 3rem;
   margin: 1.5rem auto;
-  padding: 1rem;
-  background: #ffffff;
+  padding: 15px 10px;
+  background: white;
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
   color: #757c80;
   font-size: 15px;
   font-weight: 500;
-  text-align: center;
   letter-spacing: -0.5%;
+  display: flex;
 }
-* body main .container .container-open .city::before {
+* body main .container .weather-container .city::before {
   content: url(../images/location.png);
-  position: absolute;
-  left: 5rem;
+  margin: 0 10px;
 }
 @media screen and (max-width: 480px) {
-  * body main .container .container-open .city {
-    margin: 10px 0 0 15px;
-  }
-  * body main .container .container-open .city::before {
-    content: url(../images/location.png);
-    position: absolute;
-    left: 2rem;
+  * body main .container .weather-container .city {
+    width: 17rem;
+    margin: 10px 0 0 20px;
   }
 }
-* body main .container .container-open .close {
+* body main .container .weather-container .close {
+  display: none;
   position: absolute;
-  right: 15px;
-  top: 22px;
+  right: 20px;
+  top: 18px;
   width: 36px;
   height: 36px;
   opacity: 0.3;
 }
-* body main .container .container-open .close:hover {
+* body main .container .weather-container .close:hover {
   opacity: 1;
 }
-* body main .container .container-open .close:before, * body main .container .container-open .close:after {
+* body main .container .weather-container .close::before, * body main .container .weather-container .close::after {
   position: absolute;
   left: 15px;
   content: " ";
   height: 33px;
   width: 2px;
-  background-color: #333;
+  background-color: rgba(48, 47, 47, 0.815);
 }
-* body main .container .container-open .close:before {
+* body main .container .weather-container .close::before {
   transform: rotate(45deg);
 }
-* body main .container .container-open .close:after {
+* body main .container .weather-container .close::after {
   transform: rotate(-45deg);
 }
-* body main .container .container-open .today {
+@media screen and (max-width: 480px) {
+  * body main .container .weather-container .close {
+    display: block;
+  }
+}
+* body main .container .weather-container .today {
   font-size: 40px;
-  margin: 15px;
+  margin: 20px;
   font-weight: 500;
 }
-* body main .container .container-open .today-info {
+* body main .container .weather-container .today-info {
   display: flex;
   width: 25.4rem;
-  height: 15rem;
-  margin: 15px;
-  background: #ffffff;
-  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
+  height: 15.5rem;
+  margin: 20px;
+  background: white;
+  box-shadow: 0px 0px 5px rgba(48, 47, 47, 0.815);
   border-radius: 10px;
   padding: 10px;
 }
-* body main .container .container-open .today-info .info-left {
-  width: 60%;
-}
-* body main .container .container-open .today-info .info-left .temperature {
+* body main .container .weather-container .today-info .info-left .temperature {
   font-size: 50px;
   margin: 0;
 }
-* body main .container .container-open .today-info .info-left .description {
+* body main .container .weather-container .today-info .info-left .description {
   font-weight: 300;
   font-size: 25px;
   text-transform: capitalize;
 }
-* body main .container .container-open .today-info .info-left .data {
+* body main .container .weather-container .today-info .info-left .data {
   font-weight: 400;
   font-size: 14px;
-  color: #62696d;
+  color: rgba(48, 47, 47, 0.815);
   margin: 30px 0;
 }
-* body main .container .container-open .today-info .info-right {
+* body main .container .weather-container .today-info .info-right {
   display: flex;
   position: relative;
   flex-direction: column;
-  justify-content: center;
-  color: #62696D;
+  color: rgba(48, 47, 47, 0.815);
   font-weight: 400;
   letter-spacing: -0.005em;
   font-size: 14px;
   line-height: 40px;
   padding: 5px;
   width: 40%;
+  margin: 10px 0 0 40px;
 }
-* body main .container .container-open .today-info .info-right::before {
-  content: url(../images/vertical-line.png);
+* body main .container .weather-container .today-info .info-right::before {
+  content: url("../images/vertical-line.png");
   position: absolute;
-  left: -8px;
-  top: -2px;
+  top: -8px;
+  left: -5px;
 }
-* body main .container .container-open .daily {
+@media screen and (max-width: 480px) {
+  * body main .container .weather-container .today-info .info-right {
+    width: 13rem;
+    margin: 0 auto;
+    height: 20rem;
+  }
+  * body main .container .weather-container .today-info .info-right::before {
+    content: url("../images/vertical-line.png");
+    position: absolute;
+    top: 4px;
+  }
+}
+@media screen and (max-width: 480px) {
+  * body main .container .weather-container .today-info {
+    width: 20rem;
+    margin: 0 auto;
+    height: 16rem;
+  }
+}
+* body main .container .weather-container .daily {
   font-size: 35px;
-  margin: 15px;
+  margin: 20px;
   font-weight: 500;
 }
-* body main .container .container-open .daily-info {
+* body main .container .weather-container .daily-info {
   display: flex;
-  margin: 10px;
+  margin: 20px;
   position: relative;
 }
-* body main .container .container-open .daily-info .daily-box {
-  width: 129px;
-  height: 124px;
-  background-color: #ffffff;
-  margin: 5px;
+* body main .container .weather-container .daily-info .daily-box {
+  width: 140px;
+  height: 130px;
+  background-color: white;
+  margin: 0 8px 0 0;
   padding: 5px;
   border-radius: 10px;
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
+  position: relative;
 }
-* body main .container .container-open .daily-info .daily-box .temp {
+* body main .container .weather-container .daily-info .daily-box:last-of-type {
+  margin: 0;
+}
+* body main .container .weather-container .daily-info .daily-box .temp {
   font-weight: 500;
   font-size: 30px;
   margin: 5px 0;
 }
-* body main .container .container-open .daily-info .daily-box .desc {
+* body main .container .weather-container .daily-info .daily-box .desc {
   font-weight: 400;
   text-transform: capitalize;
   font-size: 10px;
   margin: 0 2px 0 2px;
 }
-* body main .container .container-open .daily-info .daily-box .icon-weather1 {
+* body main .container .weather-container .daily-info .daily-box .icon-weather {
   position: absolute;
-  top: 2.3rem;
-  left: 5.5rem;
+  top: 2rem;
+  right: 0.1rem;
 }
-* body main .container .container-open .daily-info .daily-box .icon-weather2 {
-  position: absolute;
-  top: 2.3rem;
-  left: 14.2rem;
+@media screen and (max-width: 480px) {
+  * body main .container .weather-container .daily-info .daily-box .icon-weather {
+    width: 25px;
+    top: 2.8rem;
+  }
 }
-* body main .container .container-open .daily-info .daily-box .icon-weather3 {
-  position: absolute;
-  top: 2.3rem;
-  left: 22.8rem;
-}
-* body main .container .container-open .daily-info .daily-box .date {
+* body main .container .weather-container .daily-info .daily-box .date {
   font-weight: 300;
   font-size: 10px;
   color: #62696d;
@@ -285,13 +303,37 @@
   padding: 10px 0;
 }
 @media screen and (max-width: 480px) {
+  * body main .container .weather-container {
+    width: 375px;
+    height: 100%;
+    transform: translateX(375px);
+    transition: transform 0.7s ease-in-out;
+  }
+}
+* body main .container .container-open {
+  transform: translateX(0px);
+  transition: transform 0.7s ease-in-out;
+}
+@media screen and (max-width: 480px) {
   * body main .container .container-open {
-    width: 471px;
+    width: 375px;
+    transform: translateX(0px);
+    transition: transform 0.7s ease-in-out;
+  }
+}
+* body main .container .container-closed {
+  transform: translateX(450px);
+  transition: transform 0.7s ease-in-out;
+}
+@media screen and (max-width: 480px) {
+  * body main .container .container-closed {
+    transform: translateX(375px);
+    transition: transform 0.7s ease-in-out;
   }
 }
 @media screen and (max-width: 480px) {
-  * body main .container {
-    align-items: flex-start;
+  * body main {
+    background-position: left;
   }
 }
 

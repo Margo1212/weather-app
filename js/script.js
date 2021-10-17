@@ -9,8 +9,7 @@ let weather = {
         .then((data) => this.displayWeather(data))
         .catch((error) => {
             alert('Please enter correct location')
-        } )
-        
+        })        
     },
     
     displayWeather: function(data) {
@@ -83,12 +82,13 @@ button.addEventListener('click', () => {
         weatherContainer.classList.add('container-open')
         weather.search()
         searchBox.classList.add('search-open')   
-})
+});
 
 close.addEventListener('click', () => {
     weatherContainer.classList.remove('container-open')
+    weatherContainer.toggle('container-closed')
     searchBox.classList.remove('search-open')
-})
+});
 
 //date 
 const now = dayjs().format('dddd, DD MMMM YYYY')
@@ -101,7 +101,6 @@ document.querySelector('.date1').innerHTML = tomorrow;
 let now2 = dayjs() 
 const dayAfterTomorrow = now2.add('2', 'day').format('dddd, DD MMMM YYYY')
 document.querySelector('.date2').innerHTML = dayAfterTomorrow;
-
 
 let now3 = dayjs() 
 const afterTwoDays = now3.add('3', 'day').format('dddd, DD MMMM YYYY')
