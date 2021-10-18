@@ -1,15 +1,15 @@
 let weather = {
     'apiKey': '787ac809f4b69e1af64183f6d205a32e',
-    fetchWeather: function(city) {
+    fetchWeather(city) {
         fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&appid=${this.apiKey}`)
         .then((response) => response.json())
         .then((data) => this.displayWeather(data))
-        .catch((error) => {
+        .catch(() => {
             alert('Please enter correct location')
         })        
     },
     
-    displayWeather: function(data) {
+    displayWeather(data) {
         const list = data.list[0]    
         const { name } = data.city;
         const { country } = data.city;
@@ -64,7 +64,7 @@ let weather = {
         document.querySelector('.a2d .temp').innerText = `${Math.round(temp4)}°C`;
     },
 
-    search: function(){
+    search(){
         this.fetchWeather(document.querySelector('.search-bar').value)
     }
 };
@@ -85,6 +85,9 @@ close.addEventListener('click', () => {
     weatherContainer.toggle('container-closed')
     searchBox.classList.remove('search-open')
 });
+
+
+
 
 //date 
 const now = dayjs().format('dddd, DD MMMM YYYY')
