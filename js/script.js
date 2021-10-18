@@ -1,10 +1,7 @@
 let weather = {
     'apiKey': '787ac809f4b69e1af64183f6d205a32e',
     fetchWeather: function(city) {
-        fetch('https://api.openweathermap.org/data/2.5/forecast?q=' 
-        + city 
-        + '&units=metric&appid=' 
-        + this.apiKey)
+        fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&appid=${this.apiKey}`)
         .then((response) => response.json())
         .then((data) => this.displayWeather(data))
         .catch((error) => {
@@ -41,31 +38,30 @@ let weather = {
         const icon4 = list4.weather[0].icon;
 
         //icons
-        document.querySelector(".icon1").src = 'http://openweathermap.org/img/wn/' + icon + '.png'
-
-        document.querySelector(".icon2").src = 'http://openweathermap.org/img/wn/' + icon2 + '.png'
-        document.querySelector(".icon3").src = 'http://openweathermap.org/img/wn/' + icon3 + '.png'
-        document.querySelector(".icon4").src = 'http://openweathermap.org/img/wn/' + icon4 + '.png'
+        document.querySelector(".icon1").src = `http://openweathermap.org/img/wn/${icon}.png`
+        document.querySelector(".icon2").src = `http://openweathermap.org/img/wn/${icon2}.png`
+        document.querySelector(".icon3").src = `http://openweathermap.org/img/wn/${icon3}.png`
+        document.querySelector(".icon4").src = `http://openweathermap.org/img/wn/${icon4}.png`
 
         //today
-        document.querySelector('.city').innerText = 'Current location: ' + name + ', ' + country;
-        document.querySelector('.temperature').innerText = Math.round(temp) + '°C';
+        document.querySelector('.city').innerText = `Current location: ${name}, ${country}`;
+        document.querySelector('.temperature').innerText = `${Math.round(temp)}°C`;
         document.querySelector('.description').innerText = description;        
-        document.querySelector('.real').innerText = 'RealFeel: ' + Math.round(feels_like) + '°C';
-        document.querySelector('.humidity').innerText = 'Humidity: ' + humidity;
-        document.querySelector('.wind').innerText = "Wind speed: " + speed + 'km/h';
-        document.querySelector('.cloudcover').innerText = 'Cloudcover: ' + all + '%';
-        document.querySelector('.visibility').innerText = 'Visibility: ' + visibility;
+        document.querySelector('.real').innerText = `RealFeel:${Math.round(feels_like)}°C`;
+        document.querySelector('.humidity').innerText = `Humidity: ${humidity}`;
+        document.querySelector('.wind').innerText = `Wind speed: ${speed}km/h`;
+        document.querySelector('.cloudcover').innerText = `Cloudcover: ${all}%`;
+        document.querySelector('.visibility').innerText = `Visibility: ${visibility}`;
 
         //daily
         document.querySelector('.tomorrow .desc').innerText = description2;
-        document.querySelector('.tomorrow .temp').innerText = Math.round(temp2) + '°C';
+        document.querySelector('.tomorrow .temp').innerText = `${Math.round(temp2)}°C`;
 
         document.querySelector('.dat .desc').innerText = description3;
-        document.querySelector('.dat .temp').innerText = Math.round(temp3) + '°C';
+        document.querySelector('.dat .temp').innerText = `${Math.round(temp3)}°C`;
  
         document.querySelector('.a2d .desc').innerText = description4;
-        document.querySelector('.a2d .temp').innerText = Math.round(temp4) + '°C';
+        document.querySelector('.a2d .temp').innerText = `${Math.round(temp4)}°C`;
     },
 
     search: function(){
